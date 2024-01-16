@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './FindDoctorSearch.css';
-import { useNavigate, Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const initSpeciality = [
     'Dentist', 'Gynecologist/obstetrician', 'General Physician', 'Dermatologist', 'Ear-nose-throat (ent) Specialist', 'Homeopath', 'Ayurveda'
@@ -14,13 +14,13 @@ const FindDoctorSearch = () => {
     const handleDoctorSelect = (speciality) => {
         setSearchDoctor(speciality);
         setDoctorResultHidden(true);
-        navigate(`/instant-consultation?speciality=${speciality}`);
+        navigate(`/BookingConsultation?speciality=${speciality}`);
         window.location.reload();
     }
     return (
         <div className='finddoctor'>
             <center>
-                <h1>Find a doctor and Consult instantly</h1>
+                <h1>Find a doctor</h1>
                 <div>               <i style={{color:'#000000',fontSize:'20rem'}} className="fa fa-user-md"></i>
 </div>                <div className="home-search-container"  style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
                     <div className="doctor-search-box">
