@@ -7,6 +7,7 @@ import Navbar from './Components/Navbar/Navbar';
 import SignUp from './Components/SignUp/SignUp';
 import InstantConsultation from './Components/InstantConsultation/InstantConsultation';
 import FindDoctorSearch from './Components/FindDoctorSearch/FindDoctorSearch';
+import DoctorCard from './Components/DoctorCard/DoctorCard';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route path="/SignUp" element={<SignUp/>}/>
       <Route path="/InstantConsultation" element={<InstantConsultation/>}/>
       <Route path="/FindDoctorSearch" element={<FindDoctorSearch/>}/>
+      <Route path="/DoctorCard" element={<DoctorCard/>}/>
       </Routes>
       </BrowserRouter>
     </div>
