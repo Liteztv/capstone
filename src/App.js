@@ -7,7 +7,7 @@ import Navbar from './Components/Navbar/Navbar';
 import SignUp from './Components/SignUp/SignUp';
 import InstantConsultation from './Components/InstantConsultation/InstantConsultation';
 import BookingConsultation from './Components/BookingConsultation/BookingConsultation';
-
+import ReviewForm from './Components/ReviewForm/ReviewForm';
 
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
       <Route path="/SignUp" element={<SignUp/>}/>
       <Route path="/InstantConsultation" element={<InstantConsultation/>}/>
       <Route path="/BookingConsultation" element={<BookingConsultation/>}/>
+      <Route path="/ReviewForm" element={<ReviewForm/>}/>
       
       </Routes>
       </BrowserRouter>
