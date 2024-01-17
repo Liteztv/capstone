@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-const ReviewPage = () => {
+const ReviewForm = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -17,6 +18,15 @@ const ReviewPage = () => {
 
     fetchData();
   }, []);
+
+  // Function to update reviewGiven status
+  const updateReviewGiven = (id) => {
+    setData((prevData) =>
+      prevData.map((item) =>
+        item.id === id ? { ...item, reviewGiven: true } : item
+      )
+    );
+  };
 
   return (
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '120vh' }}>
@@ -35,7 +45,9 @@ const ReviewPage = () => {
               <td>{item.name}</td>
               <td>{item.speciality}</td>
               <td>
-                <button>Leave a Review</button>
+                <Link to='/GiveReviews'>
+                  <button>Click Here</button>
+                </Link>
               </td>
               <td>{item.reviewGiven ? 'Yes' : 'No'}</td>
             </tr>
@@ -46,6 +58,5 @@ const ReviewPage = () => {
   );
 };
 
-export default ReviewPage;
-
+export default ReviewForm;
 
