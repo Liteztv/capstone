@@ -1,3 +1,4 @@
+// ReviewForm.jsx
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -10,7 +11,9 @@ const ReviewForm = () => {
       try {
         const response = await fetch('https://api.npoint.io/9a5543d36f1460da2f63');
         const result = await response.json();
-        setData(result);
+        // Add an ID property to each doctor based on the array index
+        const dataWithIds = result.map((item, index) => ({ ...item, id: index }));
+        setData(dataWithIds);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -33,6 +36,7 @@ const ReviewForm = () => {
       <table style={{ width: '100%', borderCollapse: 'collapse' }}>
         <thead>
           <tr>
+            <th>ID</th>
             <th>Name</th>
             <th>Speciality</th>
             <th>Leave a Review</th>
@@ -42,11 +46,12 @@ const ReviewForm = () => {
         <tbody>
           {data.map((item) => (
             <tr key={item.id}>
+              <td>{item.id}</td>
               <td>{item.name}</td>
               <td>{item.speciality}</td>
               <td>
                 <Link to='/GiveReviews'>
-                  <button>Click Here</button>
+                  <button onClick={() => updateReviewGiven(item.id)}>Click Here</button>
                 </Link>
               </td>
               <td>{item.reviewGiven ? 'Yes' : 'No'}</td>
@@ -59,4 +64,3 @@ const ReviewForm = () => {
 };
 
 export default ReviewForm;
-
