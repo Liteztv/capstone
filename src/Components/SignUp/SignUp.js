@@ -55,6 +55,13 @@ const SignUp = () => {
     return (
         <div className="container" style={{marginTop:'5%'}}>
         <div className="signup-grid">
+        <div className="signup-text">
+                <h1>Sign Up</h1>
+
+            </div>
+            <div className="signup-text" >
+                Already a member? <span><Link to="/Login"> Login</Link></span>
+            </div>
         <div className="signup-form">
          <form method="POST" onSubmit={register}>
            <div className="form-group">
@@ -71,7 +78,7 @@ const SignUp = () => {
        </div>
        <div className="form-group">
            <label htmlFor="password">Password</label>
-           <input value={password} onChange={(e) => setPassword(e.target.value)} name="password" id="password" className="form-control" placeholder="Enter your password" aria-describedby="helpId" />
+           <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" name="password" id="password" className="form-control" placeholder="Enter your password" aria-describedby="helpId" />
 
        </div>
                  
