@@ -1,4 +1,3 @@
-// ReviewForm.jsx
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -22,11 +21,11 @@ const ReviewForm = () => {
     fetchData();
   }, []);
 
-  // Function to update reviewGiven status
+  // Function to update reviewGiven status and disable the button
   const updateReviewGiven = (id) => {
     setData((prevData) =>
       prevData.map((item) =>
-        item.id === id ? { ...item, reviewGiven: true } : item
+        item.id === id ? { ...item, reviewGiven: true, buttonDisabled: true } : item
       )
     );
   };
@@ -50,8 +49,12 @@ const ReviewForm = () => {
               <td>{item.name}</td>
               <td>{item.speciality}</td>
               <td>
-                <Link to='/GiveReviews'>
-                  <button onClick={() => updateReviewGiven(item.id)}>Click Here</button>
+                <Link to='/GiveReviews' target="_blank">
+                  {item.buttonDisabled ? null : (
+                    <button onClick={() => updateReviewGiven(item.id)}>
+                      Click Here
+                    </button>
+                  )}
                 </Link>
               </td>
               <td>{item.reviewGiven ? 'Yes' : 'No'}</td>
@@ -64,3 +67,4 @@ const ReviewForm = () => {
 };
 
 export default ReviewForm;
+
