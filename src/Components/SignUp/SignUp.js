@@ -15,6 +15,7 @@ const SignUp = () => {
     const register = async (e) => {
         e.preventDefault();
         console.log(email);
+        console.log(name);
 
         // API Call
         const response = await fetch(`${API_URL}/api/auth/register`, {
