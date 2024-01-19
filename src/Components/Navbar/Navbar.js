@@ -74,7 +74,7 @@ const Navbar = () => {
         </li>
         {isLoggedIn?(
           <>
-          <li>Welcome, {email}</li>
+          <li>Welcome, {username}</li>
             <li className="link">
               <button className="btn2" onClick={handleLogout}>
                 Logout
