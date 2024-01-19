@@ -32,7 +32,7 @@ const Navbar = () => {
             localStorage.removeItem(key);
           }
         }
-        setEmail('');
+        
         window.location.reload();
     }
     const handleDropdown = () => {
@@ -43,8 +43,17 @@ const Navbar = () => {
 
       if (storedemail) {
             setIsLoggedIn(true);
-            setUsername(storedemail);
+            setEmail(storedemail);
           }
+        }, []);
+
+    useEffect(() => {
+        const storedname = sessionStorage.getItem("name");
+
+        if(storedname) {
+            setIsLoggedIn(true);
+            setUsername(storedname);
+            }
         }, []);
   return (
     <nav>
