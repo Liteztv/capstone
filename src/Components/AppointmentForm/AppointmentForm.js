@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
     const [name, setName] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
+    const [phone, setPhone] = useState('');
     const [time, setTime] = useState('');
     const [date, setDate] = useState('');
   
@@ -10,9 +10,9 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
   
     const handleFormSubmit = (e) => {
       e.preventDefault();
-      onSubmit({ name, phoneNumber, date, time });
+      onSubmit({ name, Phone, date, time });
       setName('');
-      setPhoneNumber('');
+      setPhone('');
       setDate('');
       setTime('');
 
@@ -31,12 +31,12 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="phoneNumber">Phone Number:</label>
+          <label htmlFor="phone">Phone Number:</label>
           <input
             type="tel"
-            id="phoneNumber"
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
+            id="phone"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
             required
           />
         </div>
