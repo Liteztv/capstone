@@ -9,6 +9,7 @@ import InstantConsultation from './Components/InstantConsultation/InstantConsult
 import BookingConsultation from './Components/BookingConsultation/BookingConsultation';
 import ReviewForm from './Components/ReviewForm/ReviewForm';
 import GiveReviews from './Components/GiveReviews/GiveReviews';
+import ProfileForm from './Components/ProfileForm/ProfileForm';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Route path="/BookingConsultation" element={<BookingConsultation/>}/>
       <Route path="/ReviewForm" element={<ReviewForm/>}/>
       <Route path="/GiveReviews" element={<GiveReviews/>}/>
+      <Route path="/ProfileForm" element={<ProfileForm/>}/>
       
       </Routes>
       
