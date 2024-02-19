@@ -10,7 +10,7 @@ useEffect(() => {
     const fetchData = async () => {
         try {
             const response = await fetch('https://api.npoint.io/9a5543d36f1460da2f63');
-            const resutl = await response.json();
+            const result = await response.json();
             const dataWithIds = result.map((item, index) => ({...item, id: index}));
             setData(dataWithIds);
         } catch (error) {
@@ -21,9 +21,12 @@ useEffect(() => {
 }, []);
 
 return (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '120vh' }}>
+    
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '300vh' }}>
+        
       <table style={{ width: '100%', borderCollapse: 'collapse' }}>
         <thead>
+           
           <tr>
             <th>ID</th>
             <th>Name</th>
@@ -39,8 +42,12 @@ return (
               <td>{item.name}</td>
               <td>{item.speciality}</td>
               <td>
-
+                <button>View Report</button>
               </td>
+              <td>
+                <button>Download Report</button> 
+              </td>
+
               
               
             </tr>

@@ -87,6 +87,7 @@ const Navbar = () => {
           <li>Welcome, {username}</li>
           <div className="dropdown-menu">
             <li><Link to="/ProfileForm">Your Profile</Link></li>
+            <li><Link to="/ReportsLayout">Your Reports</Link></li>
           </div>
           </div>
             <li className="link">

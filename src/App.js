@@ -10,6 +10,7 @@ import BookingConsultation from './Components/BookingConsultation/BookingConsult
 import ReviewForm from './Components/ReviewForm/ReviewForm';
 import GiveReviews from './Components/GiveReviews/GiveReviews';
 import ProfileForm from './Components/ProfileForm/ProfileForm';
+import ReportsLayout from './Components/ReportsLayout/ReportsLayout';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <Route path="/ReviewForm" element={<ReviewForm/>}/>
       <Route path="/GiveReviews" element={<GiveReviews/>}/>
       <Route path="/ProfileForm" element={<ProfileForm/>}/>
+      <Route path="/ReportsLayout" element={<ReportsLayout/>}/>
       
       </Routes>
       
